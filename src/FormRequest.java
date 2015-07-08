@@ -11,12 +11,9 @@ import java.io.IOException;
 @WebServlet(name = "FormRequest")
 public class FormRequest extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        performTask(request,response);
+        request.getRequestDispatcher("/outJSP.jsp").forward(request, response);
     }
 
-    private void performTask(HttpServletRequest request, HttpServletResponse response) {
-        RequestOutput.generate(response,request);
-    }
 
 
 }
